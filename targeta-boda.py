@@ -15,8 +15,9 @@ def cargar_datos():
 # Función para guardar los datos
 def guardar_datos(nombre):
     df = cargar_datos()
-    df = df.append({"Nombre": nombre}, ignore_index=True)
-    df.to_csv(CSV_FILE, index=False)
+    if nombre not in df["Nombre"].values:
+        df = df.append({"Nombre": nombre}, ignore_index=True)
+        df.to_csv(CSV_FILE, index=False)
 
 # Sidebar para iniciar sesión
 st.sidebar.title("Iniciar Sesión")
