@@ -1,4 +1,4 @@
-import streamlit as st
+  import streamlit as st
 import sqlite3
 import os
 
@@ -84,6 +84,6 @@ if st.button("Registrar asistencia"):
     if nombre_completo:
         guardar_invitado(nombre_completo)
         st.success("Registro exitoso, ¡nos vemos en mi boda! Posdata: Marcela")
-        st.experimental_rerun()  # Limpiar los campos y reiniciar la aplicación
+        nombre_completo = "" # Limpiar el campo después del registro exitoso
     else:
         st.error("Por favor, ingresa tu nombre completo.")
